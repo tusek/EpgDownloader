@@ -53,8 +53,7 @@ sub get {
   my $fullDescription = $self->{'plugin_config'}->get('FULL_DESCRIPTION');
 
   foreach my $name ( keys( %{$channels} ) ) {
-    Misc::pluginMessage( PLUGIN_NAME, "Downloading schedule for " . $name,
-      " " );
+    Misc::pluginMessage( PLUGIN_NAME, "Downloading schedule for " . $name , " " );
 
     my $events = $channels->{$name};
 
@@ -73,15 +72,14 @@ sub get {
     my $base_uri = $browser->uri();
 
     for ( my $i = 0 ; $i < $days ; $i++ ) {
-      $browser->get( $base_uri . "&day=" . $i ) if $i > 0;
+      $browser->get( $base_uri . "?day=" . $i ) if $i > 0;
 
       my $dateString = time2str( "%Y-%m-%d", time + ( 60 * 60 * 24 * ( $i ) ) );
       #@todo From version 1.50 of WWW-Mechanize content is decoded by default. For now we have to handle it this way.
       #my $content = $browser->content();
       my $content = $browser->response()->decoded_content();
-      
       if ( $content !~
-        s/.*<table id="programmes" cellspacing="0">(.*?)<\/table>(.*)/$1/sm )
+        s/.*<table id="station_listing">(.*?)<\/table>(.*)/$1/sm )
       {
         Misc::pluginMessage( "", "" );
         Misc::pluginMessage( PLUGIN_NAME,
@@ -91,7 +89,7 @@ sub get {
       }
 
       while (
-        $content =~ s/.*?<tr><th>.*?([0-9]{1,2}:[0-9]{1,2}).*?<\/th><td>(.*?)<\/td><\/tr>(.*)/$3/sm )
+        $content =~ s/.*?<tr class=".*?"><th>.*?([0-9]{1,2}:[0-9]{1,2}).*?<\/th><td>(.*?)<\/td><\/tr>(.*)/$3/sm )
       {
         my $hour           = $1;
         my $description    = $2;
@@ -100,21 +98,21 @@ sub get {
         my $descriptionUrl = "";
         my $title          = "";
 
-        $description =~ /<a href="(.*?)" title=".*?">(.*?)<\/a>/;
+        $description =~ /<a href="(.*?)" class=".*?">(.*?)<\/a>/;
         $descriptionUrl = $1;
         $title          = $2;
 
-        $category     = $1 if $description =~ /<span class="categ.*?">(.*?)<\/span>/;
+        $category     = $1 if $description =~ /<div class="genre">(.*?)<\/div>/;
         $description2 = $2 if $category =~ s/(.*), (.*)/$1/;
-        $description  =~ s/.*?<p>(.*?)<\/p>.*/$1/;
+        $description  =~ s/.*?<p class="excerpt">(.*?)<\/p>.*/$1/;
 
         #get full description if available and needed (follows another link so it costs time)
-        if($fullDescription == 1 && $descriptionUrl =~ /\/prog.*/) {
+        if($fullDescription == 1 && $descriptionUrl =~ /\/tv\/.*/) {
           $browser->get($descriptionUrl);
           #@todo From version 1.50 of WWW-Mechanize content is decoded by default. For now we have to handle it this way.
           #my $tmp = $browser->content();
-          my $tmp = $browser->response()->decoded_content();
-          $description = $1 if $tmp =~ /.*?<div class="desc">(.*?)<\/div>.*/sm;
+          my $tmp = $browser->response()->decoded_content();	
+	  $description = $1 if $tmp =~ /.*?<p itemprop="description">(.*?)<\/p>.*/sm;
         }
         
         #remove html tags from title
@@ -128,7 +126,7 @@ sub get {
 
         #convert hour to unix timestamp, if it's after midnight, change base date string
         $dateString = time2str( "%Y-%m-%d", time + ( 60 * 60 * 24 * ($i + 1) ) )
-          if $hour =~ /0[0-3]{1}:[0-9]{2}/;
+          if $hour =~ /^[0-3]{1}:[0-9]{2}/;
         $hour = str2time( $dateString . " " . $hour );
 
         #create event

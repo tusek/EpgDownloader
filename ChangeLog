@@ -1,3 +1,7 @@
+- fixed TelemanPl plugin issues caused by changed website structure
+- fixed TelemanPl plugin's channel list grabber and regenerated the list
+- changed channels.xml for TNK and only TelemanPl plugin
+
 - fixed WP plugin issues caused by changed website structure
 - fixed WP plugin's channel list grabber and regenerated the list
 - refreshed channel lists for EuroTV, Interia, TelemanPl and TvMovieDe plugins

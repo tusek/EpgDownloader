@@ -3,8 +3,8 @@
 #config
 use constant OUTPUT_FILE => "../channels.xml";
 use constant PLUGIN_NAME => TelemanPl;
-use constant LIST_URL => "http://www.teleman.pl/station.html";
-use constant TV_GUIDE_URL =>  "http://www.teleman.pl/station.html";
+use constant LIST_URL => "http://www.teleman.pl/program-tv/stacje";
+use constant TV_GUIDE_URL =>  "http://www.teleman.pl/program-tv/stacje";
 use constant BROWSER => 'Opera/7.54 (X11; Linux i686; U)';
 
 #include
@@ -46,7 +46,7 @@ $browser->get(LIST_URL);
 #my $content = $browser->content();
 my $content = $browser->response()->decoded_content();
 
-if($content !~ s/.*<div class="box box-stations">(.*?)/$1/sm) {
+if($content !~ s/.*<div id="stations_index">(.*?)/$1/sm) {
 	print "Unable to find channels list.\n";
 	exit;
 }
@@ -56,8 +56,9 @@ binmode(FILE, ":utf8");
 
 print FILE "<CHANNELS>\n";
 
-while($content =~ s/(.*?)<a href="\/(station\.html\?id=)(.*?)".*?>(.*?)<\/a>(.*)/$5/sm) {
-	my $url = TV_GUIDE_URL.'?id='.$3;
+#hile($content =~ s/(.*?)<a href="\/(station\.html\?id=)(.*?)".*?>(.*?)<\/a>(.*)/$5/sm) 
+while($content =~ s/(.*?)<a href="\/(program-tv\/stacje\/)(.*?)".*?>(.*?)<\/a>(.*)/$5/sm) {
+	my $url = TV_GUIDE_URL.'/'.$3;
 	my $channel = $4;
 	
 	$channel =~ s/^[\s]//;

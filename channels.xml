@@ -1,61 +1,84 @@
 <CHANNELS>
-  <IMPORT NAME="EuroTV" CHANNEL="BBC1" DESCR="http://www.eurotv.com/scripts/EutvProg_reroute.cfm?p=slbbc1">
-    <EXPORT NAME="xmltv" CHANNEL="BBC 1" />
-  </IMPORT>
-
-	<IMPORT NAME="WP" CHANNEL="CANAL+" DESCR="http://tv.wp.pl/name,B_CANAL,stid,13,time,0,program.html">
-    <EXPORT NAME="xmltv" CHANNEL="CANAL+" />
-  </IMPORT>
-
-	<IMPORT NAME="WP" CHANNEL="CANAL+ Film" DESCR="http://tv.wp.pl/name,B_CANAL-Film,stid,179,time,0,program.html">
-    <EXPORT NAME="xmltv" CHANNEL="CANAL+ FILM" />
-  </IMPORT>
-
-	<IMPORT NAME="WP" CHANNEL="TVP 1" DESCR="http://tv.wp.pl/name,B_TVP-1,stid,1,time,0,program.html">
-    <EXPORT NAME="xmltv" CHANNEL="TVP 1" />
-  </IMPORT>
-
-	<IMPORT NAME="WP" CHANNEL="TVN" DESCR="http://tv.wp.pl/name,A_TVN,stid,17,time,0,program.html">
-    <EXPORT NAME="xmltv" CHANNEL="TVN" />
-  </IMPORT>
-
-	<IMPORT NAME="WP" CHANNEL="TVP 2" DESCR="http://tv.wp.pl/name,A_TVP-2,stid,2,time,0,program.html">
-    <EXPORT NAME="xmltv" CHANNEL="TVP 2" />
-  </IMPORT>
-
-  <IMPORT NAME="TvMovieDe" CHANNEL="KI.KA" DESCR="36">
-    <EXPORT NAME="xmltv" CHANNEL="KiKa" />
-  </IMPORT>
-
-  <IMPORT NAME="TvMovieDe" CHANNEL="NICK" DESCR="37">
-    <EXPORT NAME="xmltv" CHANNEL="Nick" />
-  </IMPORT>
-
-  <IMPORT NAME="TvMovieDe" CHANNEL="MTV" DESCR="38">
-    <EXPORT NAME="xmltv" CHANNEL="MTV" />
-  </IMPORT>
-
-	<IMPORT NAME="MiGuiaTV" CHANNEL="Televisión Canaria" DESCR="http://www.miguiatv.com/programacion/television-canaria.html">
-    <EXPORT NAME="xmltv" CHANNEL="Televisión Canaria" />
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN" DESCR="http://www.teleman.pl/station.html?id=4">
+		<EXPORT NAME="xmltv" CHANNEL="TVN" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP 1" DESCR="http://www.teleman.pl/station.html?id=1">
+		<EXPORT NAME="xmltv" CHANNEL="TVP_1" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP 2" DESCR="http://www.teleman.pl/station.html?id=2">
+		<EXPORT NAME="xmltv" CHANNEL="TVP_2" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN 7" DESCR="http://www.teleman.pl/station.html?id=7">
+		<EXPORT NAME="xmltv" CHANNEL="TVN_7" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Religia.tv" DESCR="http://www.teleman.pl/program-tv/stacje/Religia-TV">
+		<EXPORT NAME="xmltv" CHANNEL="Religia_TV" />
+        </IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN 24" DESCR="http://www.teleman.pl/station.html?id=12">
+		<EXPORT NAME="xmltv" CHANNEL="TVN_24" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP Info" DESCR="http://www.teleman.pl/station.html?id=9">
+		<EXPORT NAME="xmltv" CHANNEL="TVP_Info" />
+	</IMPORT>
+        <IMPORT NAME="TelemanPl" CHANNEL="TVN CNBC" DESCR="http://www.teleman.pl/station.html?id=58">
+		<EXPORT NAME="xmltv" CHANNEL="TVN_CNBC" />
+        </IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="nSport" DESCR="http://www.teleman.pl/station.html?id=89">
+		<EXPORT NAME="xmltv" CHANNEL="nSport" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN Turbo" DESCR="http://www.teleman.pl/station.html?id=30">
+		<EXPORT NAME="xmltv" CHANNEL="TVN_Turbo" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN Style" DESCR="http://www.teleman.pl/station.html?id=39">
+		<EXPORT NAME="xmltv" CHANNEL="TVN_Style" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP Sport" DESCR="http://www.teleman.pl/station.html?id=86">
+		<EXPORT NAME="xmltv" CHANNEL="TVP_Sport" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Disney Channel" DESCR="http://www.teleman.pl/station.html?id=42">
+		<EXPORT NAME="xmltv" CHANNEL="Disney_Channel" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Puls" DESCR="http://www.teleman.pl/station.html?id=8">
+		<EXPORT NAME="xmltv" CHANNEL="Puls" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Polonia 1" DESCR="http://www.teleman.pl/station.html?id=103">
+		<EXPORT NAME="xmltv" CHANNEL="Polonia_1" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP Polonia" DESCR="http://www.teleman.pl/station.html?id=10">
+		<EXPORT NAME="xmltv" CHANNEL="TVP_Polonia" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Tele 5" DESCR="http://www.teleman.pl/station.html?id=72">
+		<EXPORT NAME="xmltv" CHANNEL="Tele_5" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="VIVA Polska" DESCR="http://www.teleman.pl/station.html?id=46">
+		<EXPORT NAME="xmltv" CHANNEL="VIVA_Polska" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP Kultura" DESCR="http://www.teleman.pl/station.html?id=5">
+		<EXPORT NAME="xmltv" CHANNEL="TVP_Kultura" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Edusat" DESCR="http://www.teleman.pl/station.html?id=113">
+		<EXPORT NAME="xmltv" CHANNEL="Edusat" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TV Biznes" DESCR="http://www.teleman.pl/station.html?id=120">
+		<EXPORT NAME="xmltv" CHANNEL="TV_Biznes" />
 	</IMPORT>
 
-  <IMPORT NAME="Interia" CHANNEL="TVP 1" DESCR="http://programtv.interia.pl/kanaly/wszystkie/tvp-1,44,10?sDate=2008-10-06&amp;sTimeF=22&amp;sTimeT=4&amp;sTimeT=4&amp;cn=&amp;p=1">
-    <EXPORT NAME="xmltv" CHANNEL="TVP1" />
-  </IMPORT>
-  <IMPORT NAME="Interia" CHANNEL="TVP 2" DESCR="http://programtv.interia.pl/kanaly/wszystkie/tvp-2,45,10?sDate=2008-10-06&amp;sTimeF=22&amp;sTimeT=4&amp;sTimeT=4&amp;cn=&amp;p=1">
-    <EXPORT NAME="xmltv" CHANNEL="TVP2" />
-  </IMPORT>
-  <IMPORT NAME="Interia" CHANNEL="Polsat" DESCR="http://programtv.interia.pl/kanaly/wszystkie/polsat,49,10?sDate=2008-10-06&amp;sTimeF=22&amp;sTimeT=4&amp;sTimeT=4&amp;cn=&amp;p=1">
-    <EXPORT NAME="xmltv" CHANNEL="Polsat" />
-  </IMPORT>
-  <IMPORT NAME="Interia" CHANNEL="TVN" DESCR="http://programtv.interia.pl/kanaly/wszystkie/tvn,162,10?sDate=2008-10-06&amp;sTimeF=22&amp;sTimeT=4&amp;sTimeT=4&amp;cn=&amp;p=1">
-    <EXPORT NAME="xmltv" CHANNEL="TVN" />
-  </IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Discovery Channel" DESCR="http://www.teleman.pl/station.html?id=24">
+                <EXPORT NAME="xmltv" CHANNEL="Discovery_Channel" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TV 4" DESCR="http://www.teleman.pl/station.html?id=6">
+                <EXPORT NAME="xmltv" CHANNEL="TV4" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Kino Polska" DESCR="http://www.teleman.pl/station.html?id=15">
+                <EXPORT NAME="xmltv" CHANNEL="KinoPolska" />
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Polsat" DESCR="http://www.teleman.pl/station.html?id=3">
+                <EXPORT NAME="xmltv" CHANNEL="Polsat" />
+	</IMPORT>
 
-  <IMPORT NAME="TelemanPl" CHANNEL="HBO" DESCR="http://www.teleman.pl/station.html?id=17">
-    <EXPORT NAME="xmltv" CHANNEL="HBO" />
-  </IMPORT>
-  <IMPORT NAME="TelemanPl" CHANNEL="HBO 2" DESCR="http://www.teleman.pl/station.html?id=21">
-    <EXPORT NAME="xmltv" CHANNEL="HBO 2" />
-  </IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVS" DESCR="http://www.teleman.pl/program-tv/stacje/TVS">
+                <EXPORT NAME="xmltv" CHANNEL="TVS" />
+        </IMPORT>
+
 </CHANNELS>
+
