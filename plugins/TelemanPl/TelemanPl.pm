@@ -112,8 +112,7 @@ sub get {
           #@todo From version 1.50 of WWW-Mechanize content is decoded by default. For now we have to handle it this way.
           #my $tmp = $browser->content();
           my $tmp = $browser->response()->decoded_content();	
-          if ( $descriptionUrl ne "/tv/Zakonczenie-Programu-41" && $descriptionUrl ne "/tv/Serwis-Info-228001"
-                && $descriptionUrl ne "/tv/Pogoda-228002" )
+	  if( length($tmp) < 50000 )
           {
                 $description = $1 if $tmp =~ /.*?<p property="v:summary" class="summary">(.*?)<\/p>.*/;
           }
