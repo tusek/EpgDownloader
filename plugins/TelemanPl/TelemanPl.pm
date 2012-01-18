@@ -112,8 +112,11 @@ sub get {
           #@todo From version 1.50 of WWW-Mechanize content is decoded by default. For now we have to handle it this way.
           #my $tmp = $browser->content();
           my $tmp = $browser->response()->decoded_content();	
-	  $description = $1 if $tmp =~ /.*?<p>(.*?)<\/p>.*/sm;
-        }
+          if ( $descriptionUrl ne "/tv/Zakonczenie-Programu-41")
+          {
+                $description = $1 if $tmp =~ /.*?<p property="v:summary" class="summary">(.*?)<\/p>.*/;
+          }
+        }       
         
         #remove html tags from title
         $title =~ s/<(\/?)(.*?)>//smg;
