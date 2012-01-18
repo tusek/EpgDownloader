@@ -155,10 +155,13 @@ sub save {
 		my $channelId = $channel;
 		$channelId = $channelCount."_".$channelId if $self->{'plugin_config'}->get('UNIQUE_CHANNEL_PREFIX') eq "1";
 		$channelId = HTML::Entities::encode($channelId);
-		
+		my $channelIcon = "";
+                $channelIcon = $self->{'config'}->{'xmltv_icons'}->{$channel};
+	
 		#save channel node
 		print FILE "\t<channel id=\"".$channelId."\">\n";
 		print FILE "\t\t<display-name>".HTML::Entities::encode($channel)."</display-name>\n";
+		print FILE "\t\t<icon src=\"".$channelIcon."\" />\n" if !($channelIcon eq "");
 		print FILE "\t</channel>\n";
 		
 		for(my $i=0; $i <= $#{$channelEvents}; $i++) {

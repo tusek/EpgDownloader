@@ -76,10 +76,17 @@ sub new {
 
 		my $importName = $importOptions;
 		my $importChannel = $importOptions;
+                my $importChannelIcon = $importOptions;;
+                my $importChannelIconHELP = $importOptions;
 
 		$importName =~ s/(.*?)NAME="(.*?)"(.*)/$2/i;
 		$importChannel =~ s/(.*?)CHANNEL="(.*?)"(.*)/$2/i;
 		
+                $importChannelIcon =~ s/(.*?)ICON="(.*?)"(.*)/$2/i;
+                if ($importChannelIcon eq $importChannelIconHELP) {
+                        $importChannelIcon="";
+                }
+
 		#check if plugin is available
 		next if($availablePlugins !~ /[\s]$importName[\s]/);
 		
@@ -100,6 +107,10 @@ sub new {
 			
 			$exportName =~ s/(.*?)NAME="(.*?)"(.*)/$2/i;
 			$exportChannel =~ s/(.*?)CHANNEL="(.*?)"(.*)/$2/i;
+                        if ( $exportName eq "xmltv" )  {
+                                $self->{'config'}->{'xmltv_icons'} = {} if !exists($self->{'config'}->{'xmltv_icons'});
+                                $self->{'config'}->{'xmltv_icons'}->{$exportChannel} = $importChannelIcon;
+                        }
 			
 			#check if plugin is available
 			next if($availablePlugins !~ /[\s]$exportName[\s]/);

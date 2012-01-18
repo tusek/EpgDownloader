@@ -1,11 +1,11 @@
 <CHANNELS>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVN" DESCR="http://www.teleman.pl/station.html?id=4">
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN" DESCR="http://www.teleman.pl/station.html?id=4" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvn_pl.jpg" >
 		<EXPORT NAME="xmltv" CHANNEL="TVN" />
 	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVP 1" DESCR="http://www.teleman.pl/station.html?id=1">
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP 1" DESCR="http://www.teleman.pl/station.html?id=1" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp1.jpg" >
 		<EXPORT NAME="xmltv" CHANNEL="TVP_1" />
 	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVP 2" DESCR="http://www.teleman.pl/station.html?id=2">
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP 2" DESCR="http://www.teleman.pl/station.html?id=2" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp2.jpg" >
 		<EXPORT NAME="xmltv" CHANNEL="TVP_2" />
 	</IMPORT>
 	<IMPORT NAME="TelemanPl" CHANNEL="TVN 7" DESCR="http://www.teleman.pl/station.html?id=7">
