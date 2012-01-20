@@ -147,7 +147,7 @@ sub save {
 	print FILE "<tv date=\"".$time."\" generator-info-name=\"".GENERATOR_INFO_NAME."\" generator-info-url=\"".GENERATOR_INFO_URL."\">\n";
 
 	my $channelCount=0;
-	foreach my $channel (keys(%{$events})) {
+	foreach my $channel (sort(keys(%{$events}))) {
 		my $channelEvents = $events->{$channel};
 		next if $#{$channelEvents} == -1;
 		

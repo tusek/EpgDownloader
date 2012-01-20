@@ -53,7 +53,7 @@ sub get {
   my $days            = $self->{'plugin_config'}->get('DAYS');
   my $fullDescription = $self->{'plugin_config'}->get('FULL_DESCRIPTION');
 
-  foreach my $name ( keys( %{$channels} ) ) {
+  foreach my $name ( sort(keys( %{$channels} ) ) ) {
     Misc::pluginMessage( PLUGIN_NAME, "Downloading schedule for " . $name , " " );
 
     my $events = $channels->{$name};
