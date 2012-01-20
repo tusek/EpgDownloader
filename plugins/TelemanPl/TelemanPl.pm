@@ -123,7 +123,7 @@ sub get {
                 print FILE $tmp;
                 close(FILE);
 
-                $descriptionTmp = `/bin/grep '<p property="v:summary" class="summary">' /tmp/epgTempFile.tmp | /bin/sed 's/<\\/p>//g' | /bin/sed 's/<p property="v:summary" class="summary">//g' ;` ;
+                $descriptionTmp = `/bin/grep '<p property="v:summary" class="summary">' /tmp/epgTempFile.tmp | /bin/sed 's/<\\/p>//g' | /bin/sed 's/<p property="v:summary" class="summary">//g' |  /bin/sed 's/      //g';` ;
                 $descriptionTmp = Encode::decode("utf8", $descriptionTmp);
                 if( length($descriptionTmp) > length($description)) {
                         $description=$descriptionTmp;
