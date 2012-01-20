@@ -5,6 +5,7 @@ use WWW::Mechanize;
 use Date::Format;
 use Date::Parse;
 use plugins::TelemanPl::include::ConfigTelemanPl;
+use Encode;
 use strict;
 
 =pod
@@ -94,6 +95,7 @@ sub get {
         my $hour           = $1;
         my $description    = $2;
         my $description2   = "";
+	my $descriptionTmp = "";
         my $category       = "";
         my $descriptionUrl = "";
         my $title          = "";
@@ -115,7 +117,19 @@ sub get {
 	  if( length($tmp) < 50000 )
           {
                 $description = $1 if $tmp =~ /.*?<p property="v:summary" class="summary">(.*?)<\/p>.*/;
+          }else {
+                open(FILE, "> /tmp/epgTempFile.tmp");
+                binmode(FILE, ":utf8");
+                print FILE $tmp;
+                close(FILE);
+
+                $descriptionTmp = `/bin/grep '<p property="v:summary" class="summary">' /tmp/epgTempFile.tmp | /bin/sed 's/<\\/p>//g' | /bin/sed 's/<p property="v:summary" class="summary">//g' ;` ;
+                $descriptionTmp = Encode::decode("utf8", $descriptionTmp);
+                if( length($descriptionTmp) > length($description)) {
+                        $description=$descriptionTmp;
+                }
           }
+
         }       
         
         #remove html tags from title
