@@ -52,6 +52,7 @@ sub get {
 
   my $days            = $self->{'plugin_config'}->get('DAYS');
   my $fullDescription = $self->{'plugin_config'}->get('FULL_DESCRIPTION');
+  my $fullDescriptionMap = {};
 
   foreach my $name ( sort(keys( %{$channels} ) ) ) {
     Misc::pluginMessage( PLUGIN_NAME, "Downloading schedule for " . $name , " " );
@@ -110,7 +111,10 @@ sub get {
 
         #get full description if available and needed (follows another link so it costs time)
         if($fullDescription == 1 && $descriptionUrl =~ /\/tv\/.*/) {
-          $browser->get($descriptionUrl);
+         if(exists($fullDescriptionMap->{$descriptionUrl})){
+          $description= $fullDescriptionMap->{$descriptionUrl} ;
+         } else{
+	  $browser->get($descriptionUrl);
           #@todo From version 1.50 of WWW-Mechanize content is decoded by default. For now we have to handle it this way.
           #my $tmp = $browser->content();
           my $tmp = $browser->response()->decoded_content();	
@@ -128,8 +132,11 @@ sub get {
                 if( length($descriptionTmp) > length($description)) {
                         $description=$descriptionTmp;
                 }
+                if(length($tmp) > 50000){
+                        $fullDescriptionMap->{$descriptionUrl} = $descriptionTmp;
+                }
           }
-
+	 }
         }       
         
         #remove html tags from title
