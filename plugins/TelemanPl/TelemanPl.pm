@@ -81,7 +81,7 @@ sub get {
       #my $content = $browser->content();
       my $content = $browser->response()->decoded_content();
       if ( $content !~
-        s/.*<table id="station_listing">(.*?)<\/table>(.*)/$1/sm )
+	s/.*<ul id="station-listing">(.*?)<\/ul>(.*)/$1/sm )
       {
         Misc::pluginMessage( "", "" );
         Misc::pluginMessage( PLUGIN_NAME,
@@ -91,7 +91,7 @@ sub get {
       }
 
       while (
-        $content =~ s/.*?<tr class=".*?"><th>.*?([0-9]{1,2}:[0-9]{1,2}).*?<\/th><td>(.*?)<\/td><\/tr>(.*)/$3/sm )
+	$content =~ s/.*?<li id=".*?" class=".*?">.*?<em>.*?([0-9]{1,2}:[0-9]{1,2}).*?<\/em><div class="detail">(.*?)<\/div><\/li>(.*)/$3/sm )
       {
         my $hour           = $1;
         my $description    = $2;
@@ -100,15 +100,21 @@ sub get {
         my $category       = "";
         my $descriptionUrl = "";
         my $title          = "";
+	my $copyOfEntry    = "";
 
-        $description =~ /<a href="(.*?)" class=".*?">(.*?)<\/a>/;
+	
+	$description =~ /<a href="(.*?)">(.*?)<\/a>/;
         $descriptionUrl = $1;
         $title          = $2;
 
-        $category     = $1 if $description =~ /<div class="genre">(.*?)<\/div>/;
+        $category     = $1 if $description =~ /<p class="genre">(.*?)<\/p>/;
         $description2 = $2 if $category =~ s/(.*), (.*)/$1/;
-        $description  =~ s/.*?<p class="excerpt">(.*?)<\/p>.*/$1/;
-
+	$copyOfEntry = $description;
+        $description  =~ s/.*?<p>(.*?)<\/p>.*/$1/;
+	if($copyOfEntry eq $description) {
+		$description = "";
+	}	
+	#print "finally short description:\n".$description."\n\n\n";
         #get full description if available and needed (follows another link so it costs time)
         if($fullDescription == 1 && $descriptionUrl =~ /\/tv\/.*/) {
          if(exists($fullDescriptionMap->{$descriptionUrl})){
@@ -120,14 +126,15 @@ sub get {
           my $tmp = $browser->response()->decoded_content();	
 	  if( length($tmp) < 50000 )
           {
-                $description = $1 if $tmp =~ /.*?<p property="v:summary" class="summary">(.*?)<\/p>.*/;
+                $description = $1 if $tmp =~ /.*?<p>(.*?)<\/p>.*/;
           }else {
                 open(FILE, "> /tmp/epgTempFile.tmp");
                 binmode(FILE, ":utf8");
                 print FILE $tmp;
                 close(FILE);
 
-                $descriptionTmp = `/bin/grep '<p property="v:summary" class="summary">' /tmp/epgTempFile.tmp | /bin/sed 's/<\\/p>//g' | /bin/sed 's/<p property="v:summary" class="summary">//g' |  /bin/sed 's/      //g';` ;
+                $descriptionTmp = `/bin/grep '<p>' /tmp/epgTempFile.tmp | /bin/sed 's/<\\/p>//g' | /bin/sed 's/<p>//g' |  /bin/sed 's/      //g';` ;
+
                 $descriptionTmp = Encode::decode("utf8", $descriptionTmp);
                 if( length($descriptionTmp) > length($description)) {
                         $description=$descriptionTmp;

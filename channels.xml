@@ -1,84 +1,141 @@
 <CHANNELS>
 	<IMPORT NAME="TelemanPl" CHANNEL="TVN" DESCR="http://www.teleman.pl/station.html?id=4" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvn_pl.jpg" >
 		<EXPORT NAME="xmltv" CHANNEL="TVN" />
+
 	</IMPORT>
 	<IMPORT NAME="TelemanPl" CHANNEL="TVP 1" DESCR="http://www.teleman.pl/station.html?id=1" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp1.jpg" >
 		<EXPORT NAME="xmltv" CHANNEL="TVP_1" />
+
 	</IMPORT>
 	<IMPORT NAME="TelemanPl" CHANNEL="TVP 2" DESCR="http://www.teleman.pl/station.html?id=2" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp2.jpg" >
 		<EXPORT NAME="xmltv" CHANNEL="TVP_2" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVN 7" DESCR="http://www.teleman.pl/station.html?id=7">
-		<EXPORT NAME="xmltv" CHANNEL="TVN_7" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="Religia.tv" DESCR="http://www.teleman.pl/program-tv/stacje/Religia-TV">
-		<EXPORT NAME="xmltv" CHANNEL="Religia_TV" />
-        </IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVN 24" DESCR="http://www.teleman.pl/station.html?id=12">
-		<EXPORT NAME="xmltv" CHANNEL="TVN_24" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVP Info" DESCR="http://www.teleman.pl/station.html?id=9">
-		<EXPORT NAME="xmltv" CHANNEL="TVP_Info" />
-	</IMPORT>
-        <IMPORT NAME="TelemanPl" CHANNEL="TVN CNBC" DESCR="http://www.teleman.pl/station.html?id=58">
-		<EXPORT NAME="xmltv" CHANNEL="TVN_CNBC" />
-        </IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="nSport" DESCR="http://www.teleman.pl/station.html?id=89">
-		<EXPORT NAME="xmltv" CHANNEL="nSport" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVN Turbo" DESCR="http://www.teleman.pl/station.html?id=30">
-		<EXPORT NAME="xmltv" CHANNEL="TVN_Turbo" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVN Style" DESCR="http://www.teleman.pl/station.html?id=39">
-		<EXPORT NAME="xmltv" CHANNEL="TVN_Style" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVP Sport" DESCR="http://www.teleman.pl/station.html?id=86">
-		<EXPORT NAME="xmltv" CHANNEL="TVP_Sport" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="Disney Channel" DESCR="http://www.teleman.pl/station.html?id=42">
-		<EXPORT NAME="xmltv" CHANNEL="Disney_Channel" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="Puls" DESCR="http://www.teleman.pl/station.html?id=8">
-		<EXPORT NAME="xmltv" CHANNEL="Puls" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="Polonia 1" DESCR="http://www.teleman.pl/station.html?id=103">
-		<EXPORT NAME="xmltv" CHANNEL="Polonia_1" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVP Polonia" DESCR="http://www.teleman.pl/station.html?id=10">
-		<EXPORT NAME="xmltv" CHANNEL="TVP_Polonia" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="Tele 5" DESCR="http://www.teleman.pl/station.html?id=72">
-		<EXPORT NAME="xmltv" CHANNEL="Tele_5" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="VIVA Polska" DESCR="http://www.teleman.pl/station.html?id=46">
-		<EXPORT NAME="xmltv" CHANNEL="VIVA_Polska" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TVP Kultura" DESCR="http://www.teleman.pl/station.html?id=5">
-		<EXPORT NAME="xmltv" CHANNEL="TVP_Kultura" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="Edusat" DESCR="http://www.teleman.pl/station.html?id=113">
-		<EXPORT NAME="xmltv" CHANNEL="Edusat" />
-	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TV Biznes" DESCR="http://www.teleman.pl/station.html?id=120">
-		<EXPORT NAME="xmltv" CHANNEL="TV_Biznes" />
-	</IMPORT>
 
-	<IMPORT NAME="TelemanPl" CHANNEL="Discovery Channel" DESCR="http://www.teleman.pl/station.html?id=24">
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN 7" DESCR="http://www.teleman.pl/station.html?id=7" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvn_siedem.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVN_7" />
+
+	</IMPORT>
+	<!-- Religia TV from tv-guide.ubuntu.pl -->
+        <!--IMPORT NAME="UPC" CHANNEL="Religia TV/Vx" DESCR="http://przewodnik-tv.upclive.pl/TV/Guide/Channel/Religia+TV"-->
+	<IMPORT NAME="TelemanPl" CHANNEL="Religia.tv" DESCR="http://www.teleman.pl/program-tv/stacje/Religia-TV" ICON="http://www.lyngsat-logo.com/logo/tv/rr/religia_tv.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="Religia_TV" />
+
+        </IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN 24" DESCR="http://www.teleman.pl/station.html?id=12" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvn_24.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVN_24" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP Info" DESCR="http://www.teleman.pl/station.html?id=9" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp_info.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVP_Info" />
+
+	</IMPORT>
+	<!-- TVN CNBC Biznes -->
+        <IMPORT NAME="TelemanPl" CHANNEL="TVN CNBC" DESCR="http://www.teleman.pl/station.html?id=58" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvn_cnbc_biznes.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVN_CNBC" />
+
+        </IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="nSport" DESCR="http://www.teleman.pl/station.html?id=89" ICON="http://www.lyngsat-logo.com/logo/tv/nn/n_sport_hd.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="nSport" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN Turbo" DESCR="http://www.teleman.pl/station.html?id=30" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvn_turbo.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVN_Turbo" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVN Style" DESCR="http://www.teleman.pl/station.html?id=39" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvn_style.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVN_Style" />
+
+	</IMPORT>
+        
+	<IMPORT NAME="UPC" CHANNEL="TVN Meteo/4W" DESCR="http://przewodnik-tv.upclive.pl/TV/Guide/Channel/TVN+Meteo" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvn_meteo.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVN_Meteo" />
+
+        </IMPORT>
+
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP Sport" DESCR="http://www.teleman.pl/station.html?id=86" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp_sport.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVP_Sport" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Disney Channel" DESCR="http://www.teleman.pl/station.html?id=42" ICON="http://www.lyngsat-logo.com/logo/tv/dd/disney_channel_pl.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="Disney_Channel" />
+
+	</IMPORT>
+	<!-- TVN Warszawa - air-->
+	<!-- Mango24 - air-->
+	<IMPORT NAME="TelemanPl" CHANNEL="Puls" DESCR="http://www.teleman.pl/station.html?id=8" ICON="http://www.lyngsat-logo.com/logo/tv/pp/puls_tv.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="Puls" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Polonia 1" DESCR="http://www.teleman.pl/station.html?id=103" ICON="http://www.lyngsat-logo.com/logo/tv/pp/polonia1.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="Polonia_1" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP Polonia" DESCR="http://www.teleman.pl/station.html?id=10" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp_polonia.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVP_Polonia" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="Tele 5" DESCR="http://www.teleman.pl/station.html?id=72" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tele5_pl.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="Tele_5" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="VIVA Polska" DESCR="http://www.teleman.pl/station.html?id=46" ICON="http://www.lyngsat-logo.com/logo/tv/vv/viva_pl.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="VIVA_Polska" />
+
+	</IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="TVP Kultura" DESCR="http://www.teleman.pl/station.html?id=5" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp_kultura.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TVP_Kultura" />
+
+	</IMPORT>
+	<!--IMPORT NAME="TelemanPl" CHANNEL="Edusat" DESCR="http://www.teleman.pl/station.html?id=113" ICON="http://www.lyngsat-logo.com/logo/tv/ee/edusat_pl.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="Edusat" />
+		<EXPORT NAME="vdr" CHANNEL="EDUSAT" />
+	</IMPORT-->
+	<!--IMPORT NAME="TelemanPl" CHANNEL="TV Biznes" DESCR="http://www.teleman.pl/station.html?id=120" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tv_biznes.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="TV_Biznes" />
+		<EXPORT NAME="vdr" CHANNEL="TV Biznes" />
+	</IMPORT-->
+
+	<IMPORT NAME="TelemanPl" CHANNEL="Discovery Channel" DESCR="http://www.teleman.pl/station.html?id=24" ICON="http://www.lyngsat-logo.com/logo/tv/dd/discovery_pl.jpg" >
                 <EXPORT NAME="xmltv" CHANNEL="Discovery_Channel" />
 	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="TV 4" DESCR="http://www.teleman.pl/station.html?id=6">
+	<IMPORT NAME="TelemanPl" CHANNEL="TV 4" DESCR="http://www.teleman.pl/station.html?id=6" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tv4_pl.jpg" >
                 <EXPORT NAME="xmltv" CHANNEL="TV4" />
 	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="Kino Polska" DESCR="http://www.teleman.pl/station.html?id=15">
+	<IMPORT NAME="TelemanPl" CHANNEL="Kino Polska" DESCR="http://www.teleman.pl/station.html?id=15" ICON="http://www.lyngsat-logo.com/logo/tv/kk/kino_polska.jpg" >
                 <EXPORT NAME="xmltv" CHANNEL="KinoPolska" />
 	</IMPORT>
-	<IMPORT NAME="TelemanPl" CHANNEL="Polsat" DESCR="http://www.teleman.pl/station.html?id=3">
+	<IMPORT NAME="TelemanPl" CHANNEL="Polsat" DESCR="http://www.teleman.pl/station.html?id=3" ICON="http://www.lyngsat-logo.com/logo/tv/pp/polsat.jpg" >
                 <EXPORT NAME="xmltv" CHANNEL="Polsat" />
 	</IMPORT>
-
-	<IMPORT NAME="TelemanPl" CHANNEL="TVS" DESCR="http://www.teleman.pl/program-tv/stacje/TVS">
-                <EXPORT NAME="xmltv" CHANNEL="TVS" />
+        <IMPORT NAME="TelemanPl" CHANNEL="Eska TV" DESCR="http://www.teleman.pl/program-tv/stacje/Eska-TV" ICON="http://www.lyngsat-logo.com/logo/tv/ee/eska_tv.jpg" >
+		<EXPORT NAME="xmltv" CHANNEL="Eska.TV" />
         </IMPORT>
+
+	<IMPORT NAME="TelemanPl" CHANNEL="TVS" DESCR="http://www.teleman.pl/program-tv/stacje/TVS" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tv_silesia.jpg" >
+                <EXPORT NAME="xmltv" CHANNEL="TVS" />
+
+        </IMPORT>
+	<IMPORT NAME="TelemanPl" CHANNEL="4fun TV" DESCR="http://www.teleman.pl/program-tv/stacje/4fun-TV" ICON="http://www.lyngsat-logo.com/logo/tv/num/4fun_tv.jpg" >
+                <EXPORT NAME="xmltv" CHANNEL="4fun.TV" />
+
+        </IMPORT>
+	
+        <IMPORT NAME="TelemanPl" CHANNEL="TV 6" DESCR="http://www.teleman.pl/program-tv/stacje/TV6" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tv6_pl.jpg" >
+                <EXPORT NAME="xmltv" CHANNEL="TV6" />           
+        </IMPORT>
+
+        <IMPORT NAME="TelemanPl" CHANNEL="Polsat Sport News" DESCR="http://www.teleman.pl/program-tv/stacje/Polsat-Sport-News" ICON="http://www.lyngsat-logo.com/logo/tv/pp/polsat_sport_news.jpg" >
+                <EXPORT NAME="xmltv" CHANNEL="PolsatSportNews" />    
+        </IMPORT>
+
+        <IMPORT NAME="TelemanPl" CHANNEL="TTV" DESCR="http://www.teleman.pl/program-tv/stacje/TTV" ICON="http://www.lyngsat-logo.com/logo/tv/tt/ttv_pl.jpg" >
+                <EXPORT NAME="xmltv" CHANNEL="TTV" />
+        </IMPORT>
+
+        <IMPORT NAME="TelemanPl" CHANNEL="TVP Historia" DESCR="http://www.teleman.pl/program-tv/stacje/TVP-Historia" ICON="http://www.lyngsat-logo.com/logo/tv/tt/tvp_historia.jpg" >
+                <EXPORT NAME="xmltv" CHANNEL="TVP_Historia" />
+        </IMPORT>
+
 
 </CHANNELS>
 
